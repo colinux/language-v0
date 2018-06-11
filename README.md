@@ -6,9 +6,7 @@ Atom language (grammar) support for internal v0 format of [Imparato](https://www
 
 ## Installation
 
-Clone this repository in your `$HOME/.atom/packages`.
-
-Important: directory MUST be named `language-v0`.
+Install the **language-v0** package directly in Atom, or clone this repository in your `$HOME/.atom/packages`.
 
 ## Usage
 
