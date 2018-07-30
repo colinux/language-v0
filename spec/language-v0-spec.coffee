@@ -262,6 +262,16 @@ describe "V0 grammar", ->
       expect(lines[6][1]).toEqual value: ":", scopes: ['source.v0', 'punctuation.definition.function.v0']
       expect(lines[7][0]).toEqual value: "Your text", scopes: ['source.v0']
 
+    it "escaped colon are not characters", ->
+      lines = grammar.tokenizeLines """
+        == Scene 1
+
+        Eugène:
+        Listing \\:
+      """
+
+      expect(lines[3][0]).toEqual value: "Listing \\:", scopes: ['source.v0']
+
   describe "scene/separator", ->
     it "scene and first replica", ->
       lines = grammar.tokenizeLines """
