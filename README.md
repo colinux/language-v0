@@ -12,6 +12,10 @@ Install the **language-v0** package directly in Atom, or clone this repository i
 
 Source files must have the `.v0.txt` extension and should have been saved at least 1 time in the editor (trailing whitespace removal have been enabled for this extension).
 
+## Commands
+
+- **Toggle a line as a comment (didascaly)** : `cmd-(`
+
 ## Tests suite
 
 ```sh

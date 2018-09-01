@@ -1,0 +1,18 @@
+{
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Imparato",
+          "submenu": [
+            {
+              "label": "Line as comment",
+              "command": "imparato:line-as-comment"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
