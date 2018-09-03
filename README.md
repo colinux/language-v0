@@ -1,5 +1,7 @@
 # Language-v0
 
+[![Build Status](https://travis-ci.org/colinux/language-v0.svg?branch=master)](https://travis-ci.org/colinux/language-v0)
+
 Atom language (grammar) support for internal v0 format of [Imparato](https://www.imparato.io)'s theatre plays.
 
 (If you are not an Imparato developer or contributor, this grammar is of no interest to you, except to serve as Atom grammar example.)

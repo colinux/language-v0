@@ -24,13 +24,12 @@ describe('Toggle Line Comment', () => {
     })
   })
 
-
   it('enable comment', () => {
     editor.setCursorBufferPosition([1, 0])
 
     atom.commands.dispatch(workspaceElement, command)
 
-    expect(buffer.getText()).toBe("Spec :\n(Hey)\n(Having lunch)\n")
+    expect(buffer.getText()).toBe('Spec :\n(Hey)\n(Having lunch)\n')
   })
 
   it('ignore empty lines', () => {
@@ -38,7 +37,7 @@ describe('Toggle Line Comment', () => {
 
     atom.commands.dispatch(workspaceElement, command)
 
-    expect(buffer.getText()).toBe("Spec :\nHey\n(Having lunch)\n")
+    expect(buffer.getText()).toBe('Spec :\nHey\n(Having lunch)\n')
   })
 
   it('disable comment', () => {
@@ -46,6 +45,6 @@ describe('Toggle Line Comment', () => {
 
     atom.commands.dispatch(workspaceElement, command)
 
-    expect(buffer.getText()).toBe("Spec :\nHey\nHaving lunch\n")
+    expect(buffer.getText()).toBe('Spec :\nHey\nHaving lunch\n')
   })
 })
