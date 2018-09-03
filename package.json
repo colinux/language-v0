@@ -1,6 +1,7 @@
 {
   "name": "language-v0",
-  "version": "0.2.0",
+  "version": "0.3.0-dev",
+  "main": "./lib/imparato",
   "description": "Language package for Imparato internal v0 source files.",
   "author": "Colin Darie <colin@darie.eu>",
   "keywords": [
