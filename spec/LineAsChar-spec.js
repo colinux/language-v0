@@ -99,4 +99,33 @@ describe('Line As Char', () => {
       expect(buffer.getText()).toBe('Spec :\nHey :\n')
     })
   })
+
+  describe('comments handling', () => {
+    it('comment after comma', () => {
+      editor.insertText('Spec, crying\nHey\n')
+      editor.setCursorBufferPosition([0, 3])
+
+      atom.commands.dispatch(workspaceElement, command)
+
+      expect(buffer.getText()).toBe('Spec (crying) :\nHey\n')
+    })
+
+    it('normalize comment in parenthesis', () => {
+      editor.insertText('Spec(crying)\nHey\n')
+      editor.setCursorBufferPosition([0, 3])
+
+      atom.commands.dispatch(workspaceElement, command)
+
+      expect(buffer.getText()).toBe('Spec (crying) :\nHey\n')
+    })
+
+    it('normalize comment in parenthesis for a line already being char', () => {
+      editor.insertText('Spec(crying):\nHey\n')
+      editor.setCursorBufferPosition([0, 3])
+
+      atom.commands.dispatch(workspaceElement, command)
+
+      expect(buffer.getText()).toBe('Spec (crying) :\nHey\n')
+    })
+  })
 })
