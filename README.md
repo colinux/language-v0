@@ -17,6 +17,7 @@ Source files must have the `.v0.txt` extension and should have been saved at lea
 ## Commands
 
 - **Toggle a line as a comment (didascaly)** : `cmd-(`
+- **Covert a line as a speaker line (or normalize it)** : `cmd-:`
 
 ## Tests suite
 
