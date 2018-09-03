@@ -4,9 +4,9 @@ const path = require('path')
 const temp = require('temp')
 
 const packageName = 'language-v0'
-const command = 'imparato:line-as-char'
+const command = 'imparato:line-as-speaker'
 
-describe('Line As Char', () => {
+describe('Line As Speaker', () => {
   let editor, buffer, workspaceElement
 
   beforeEach(() => {
@@ -28,7 +28,7 @@ describe('Line As Char', () => {
   describe('Base behavior', () => {
     beforeEach(() => { editor.insertText('Spec :\nHey\n') })
 
-    it('transform a line as char label', () => {
+    it('transform a line as speaker label', () => {
       editor.setCursorBufferPosition([1, 0])
 
       atom.commands.dispatch(workspaceElement, command)
@@ -60,7 +60,7 @@ describe('Line As Char', () => {
       expect(buffer.getText()).toBe('Spec :\nHey\n')
     })
 
-    it('ignore line already having a char', () => {
+    it('ignore line already having a speaker', () => {
       editor.setCursorBufferPosition([0, 0])
 
       atom.commands.dispatch(workspaceElement, command)
@@ -79,7 +79,7 @@ describe('Line As Char', () => {
       expect(buffer.getText()).toBe('Spec :\nHey :\n')
     })
 
-    it('normalize spaces for line already being a char', () => {
+    it('normalize spaces for line already being a speaker', () => {
       editor.insertText('Spec   :\nHey\n')
       editor.setCursorBufferPosition([0, 0])
 
@@ -119,7 +119,7 @@ describe('Line As Char', () => {
       expect(buffer.getText()).toBe('Spec (crying) :\nHey\n')
     })
 
-    it('normalize comment in parenthesis for a line already being char', () => {
+    it('normalize comment in parenthesis for a line already being speaker', () => {
       editor.insertText('Spec(crying):\nHey\n')
       editor.setCursorBufferPosition([0, 3])
 
