@@ -9,6 +9,10 @@
             {
               "label": "Line as comment",
               "command": "imparato:line-as-comment"
+            },
+            {
+              "label": "Line as speaker",
+              "command": "imparato:line-as-speaker"
             }
           ]
         }
