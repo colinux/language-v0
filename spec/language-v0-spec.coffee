@@ -23,8 +23,7 @@ describe "V0 grammar", ->
         Another line.
       """
 
-      expect(lines[0][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[0][1]).toEqual value: "Eugène", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[0][0]).toEqual value: "@Eugène", scopes: ['source.v0', 'entity.name.function.v0']
       expect(lines[1][0]).toEqual value: "My text", scopes: ['source.v0']
       expect(lines[2][0]).toEqual value: "Another line.", scopes: ['source.v0']
 
@@ -36,8 +35,7 @@ describe "V0 grammar", ->
         Another line.
       """
 
-      expect(lines[0][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[0][1]).toEqual value: "Eugène", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[0][0]).toEqual value: "@Eugène", scopes: ['source.v0', 'entity.name.function.v0']
       expect(lines[1][0]).toEqual value: "", scopes: ['source.v0']
       expect(lines[2][0]).toEqual value: "My text", scopes: ['source.v0']
       expect(lines[3][0]).toEqual value: "Another line.", scopes: ['source.v0']
@@ -49,11 +47,10 @@ describe "V0 grammar", ->
         Another line.
       """
 
-      expect(lines[0][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[0][1]).toEqual value: "Eugène ", scopes: ['source.v0', 'entity.name.function.v0']
-      expect(lines[0][2]).toEqual value: "(", scopes: ['source.v0', 'meta.comment.v0', 'punctuation.definition.comment.v0']
-      expect(lines[0][3]).toEqual value: "comment", scopes: ['source.v0', 'meta.comment.v0', 'comment.line.v0']
-      expect(lines[0][4]).toEqual value: ")", scopes: ['source.v0',  'meta.comment.v0', 'punctuation.definition.comment.v0']
+      expect(lines[0][0]).toEqual value: "@Eugène ", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[0][1]).toEqual value: "(", scopes: ['source.v0', 'meta.comment.v0', 'punctuation.definition.comment.v0']
+      expect(lines[0][2]).toEqual value: "comment", scopes: ['source.v0', 'meta.comment.v0', 'comment.line.v0']
+      expect(lines[0][3]).toEqual value: ")", scopes: ['source.v0',  'meta.comment.v0', 'punctuation.definition.comment.v0']
 
       expect(lines[1][0]).toEqual value: "My text", scopes: ['source.v0']
       expect(lines[2][0]).toEqual value: "Another line.", scopes: ['source.v0']
@@ -65,11 +62,10 @@ describe "V0 grammar", ->
         My text
       """
 
-      expect(lines[0][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[0][1]).toEqual value: "Eugène ", scopes: ['source.v0', 'entity.name.function.v0']
-      expect(lines[0][2]).toEqual value: "(", scopes: ['source.v0', 'meta.comment.v0', 'punctuation.definition.comment.v0']
-      expect(lines[0][3]).toEqual value: "comment", scopes: ['source.v0', 'meta.comment.v0', 'comment.line.v0']
-      expect(lines[0][4]).toEqual value: ")", scopes: ['source.v0',  'meta.comment.v0', 'punctuation.definition.comment.v0']
+      expect(lines[0][0]).toEqual value: "@Eugène ", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[0][1]).toEqual value: "(", scopes: ['source.v0', 'meta.comment.v0', 'punctuation.definition.comment.v0']
+      expect(lines[0][2]).toEqual value: "comment", scopes: ['source.v0', 'meta.comment.v0', 'comment.line.v0']
+      expect(lines[0][3]).toEqual value: ")", scopes: ['source.v0',  'meta.comment.v0', 'punctuation.definition.comment.v0']
 
       expect(lines[1][0]).toEqual value: "", scopes: ['source.v0']
       expect(lines[2][0]).toEqual value: "My text", scopes: ['source.v0']
@@ -81,8 +77,7 @@ describe "V0 grammar", ->
         Another line
       """
 
-      expect(lines[0][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[0][1]).toEqual value: "Eugène", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[0][0]).toEqual value: "@Eugène", scopes: ['source.v0', 'entity.name.function.v0']
 
       expect(lines[1][0]).toEqual value: "My text ", scopes: ['source.v0']
       expect(lines[1][1]).toEqual value: "(", scopes: ['source.v0', 'meta.comment.v0', 'punctuation.definition.comment.v0']
@@ -99,8 +94,7 @@ describe "V0 grammar", ->
         My text
       """
 
-      expect(lines[0][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[0][1]).toEqual value: "Eugène", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[0][0]).toEqual value: "@Eugène", scopes: ['source.v0', 'entity.name.function.v0']
 
       expect(lines[1][0]).toEqual value: "(", scopes: ['source.v0', 'meta.comment.v0', 'punctuation.definition.comment.v0']
       expect(lines[1][1]).toEqual value: "single line comment", scopes: ['source.v0', 'meta.comment.v0', 'comment.line.v0']
@@ -120,15 +114,13 @@ describe "V0 grammar", ->
         ## Scène 2
       """
 
-      expect(lines[0][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[0][1]).toEqual value: "Eugène", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[0][0]).toEqual value: "@Eugène", scopes: ['source.v0', 'entity.name.function.v0']
       expect(lines[1][0]).toEqual value: "My text", scopes: ['source.v0']
       expect(lines[2][0]).toEqual value: "Another line.", scopes: ['source.v0']
 
       expect(lines[3][0]).toEqual value: "", scopes: ['source.v0']
 
-      expect(lines[4][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[4][1]).toEqual value: "Hector", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[4][0]).toEqual value: "@Hector", scopes: ['source.v0', 'entity.name.function.v0']
       expect(lines[5][0]).toEqual value: "Your text", scopes: ['source.v0']
 
     it "line ending with colon are not characters", ->
@@ -152,8 +144,7 @@ describe "V0 grammar", ->
 
       expect(lines[0][0]).toEqual value: "## Scene 1", scopes: ['source.v0', 'empty.heading.markup.md']
       expect(lines[1][0]).toEqual value: "", scopes: ['source.v0']
-      expect(lines[2][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[2][1]).toEqual value: "Eugène", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[2][0]).toEqual value: "@Eugène", scopes: ['source.v0', 'entity.name.function.v0']
       expect(lines[3][0]).toEqual value: "My text", scopes: ['source.v0']
 
     it "scene with colon and first replica", ->
@@ -166,8 +157,7 @@ describe "V0 grammar", ->
 
       expect(lines[0][0]).toEqual value: "## Scene 1 :", scopes: ['source.v0', 'empty.heading.markup.md']
       expect(lines[1][0]).toEqual value: "", scopes: ['source.v0']
-      expect(lines[2][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[2][1]).toEqual value: "Eugène", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[2][0]).toEqual value: "@Eugène", scopes: ['source.v0', 'entity.name.function.v0']
       expect(lines[3][0]).toEqual value: "My text", scopes: ['source.v0']
 
     it "scenes chaining", ->
@@ -185,15 +175,13 @@ describe "V0 grammar", ->
 
       expect(lines[0][0]).toEqual value: "## Scene 1", scopes: ['source.v0', 'empty.heading.markup.md']
       expect(lines[1][0]).toEqual value: "", scopes: ['source.v0']
-      expect(lines[2][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[2][1]).toEqual value: "Eugène", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[2][0]).toEqual value: "@Eugène", scopes: ['source.v0', 'entity.name.function.v0']
       expect(lines[3][0]).toEqual value: "My text", scopes: ['source.v0']
       expect(lines[4][0]).toEqual value: "", scopes: ['source.v0']
 
       expect(lines[5][0]).toEqual value: "## Scene 2", scopes: ['source.v0', 'empty.heading.markup.md']
       expect(lines[6][0]).toEqual value: "", scopes: ['source.v0']
-      expect(lines[7][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[7][1]).toEqual value: "Hector", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[7][0]).toEqual value: "@Hector", scopes: ['source.v0', 'entity.name.function.v0']
       expect(lines[8][0]).toEqual value: "Your text", scopes: ['source.v0']
 
     it "consecutive separators and first replica", ->
@@ -208,8 +196,7 @@ describe "V0 grammar", ->
       expect(lines[0][0]).toEqual value: "# Acte 1", scopes: ['source.v0', 'empty.heading.markup.md']
       expect(lines[1][0]).toEqual value: "## Scene 1", scopes: ['source.v0', 'empty.heading.markup.md']
       expect(lines[2][0]).toEqual value: "", scopes: ['source.v0']
-      expect(lines[3][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[3][1]).toEqual value: "Eugène", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[3][0]).toEqual value: "@Eugène", scopes: ['source.v0', 'entity.name.function.v0']
       expect(lines[4][0]).toEqual value: "My text", scopes: ['source.v0']
 
   # describe "scene comment", ->
@@ -330,13 +317,11 @@ describe "V0 grammar", ->
 
       expect(lines[0][0]).toEqual value: "## Scene 1", scopes: ['source.v0', 'empty.heading.markup.md']
       expect(lines[1][0]).toEqual value: "", scopes: ['source.v0']
-      expect(lines[2][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[2][1]).toEqual value: "Eugène", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[2][0]).toEqual value: "@Eugène", scopes: ['source.v0', 'entity.name.function.v0']
       expect(lines[3][0]).toEqual value: "My text", scopes: ['source.v0']
       expect(lines[4][0]).toEqual value: "", scopes: ['source.v0']
 
-      expect(lines[5][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[5][1]).toEqual value: "Hector", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[5][0]).toEqual value: "@Hector", scopes: ['source.v0', 'entity.name.function.v0']
       expect(lines[6][0]).toEqual value: "Your text", scopes: ['source.v0']
 
     it "scene and replica with blank lines", ->
@@ -354,14 +339,12 @@ describe "V0 grammar", ->
 
       expect(lines[0][0]).toEqual value: "## Scene 1", scopes: ['source.v0', 'empty.heading.markup.md']
       expect(lines[1][0]).toEqual value: "", scopes: ['source.v0']
-      expect(lines[2][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[2][1]).toEqual value: "Eugène", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[2][0]).toEqual value: "@Eugène", scopes: ['source.v0', 'entity.name.function.v0']
       expect(lines[3][0]).toEqual value: "", scopes: ['source.v0']
       expect(lines[4][0]).toEqual value: "My text", scopes: ['source.v0']
       expect(lines[5][0]).toEqual value: "", scopes: ['source.v0']
 
-      expect(lines[6][0]).toEqual value: "@", scopes: ['source.v0', 'punctuation.definition.function.v0']
-      expect(lines[6][1]).toEqual value: "Hector", scopes: ['source.v0', 'entity.name.function.v0']
+      expect(lines[6][0]).toEqual value: "@Hector", scopes: ['source.v0', 'entity.name.function.v0']
       expect(lines[7][0]).toEqual value: "", scopes: ['source.v0']
       expect(lines[8][0]).toEqual value: "Your text", scopes: ['source.v0']
 

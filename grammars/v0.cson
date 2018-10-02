@@ -23,13 +23,11 @@ repository:
       3: patterns: [{ include: '#replica' }]
 
   replica:
-    begin: '^(@)([^\\(]+)(.+)?$'
+    begin: '^(@[^\\(]+)(.+)?$'
     beginCaptures:
       1:
-        name: 'punctuation.definition.function.v0'
-      2:
         name: 'entity.name.function.v0'
-      3:
+      2:
         patterns:
           [{ include: '#didascaly' }]
     patterns: [
