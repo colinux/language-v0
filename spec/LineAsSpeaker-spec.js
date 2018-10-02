@@ -26,14 +26,14 @@ describe('Line As Speaker', () => {
   })
 
   describe('Base behavior', () => {
-    beforeEach(() => { editor.insertText('Spec :\nHey\n') })
+    beforeEach(() => { editor.insertText('@Spec\nHey\n') })
 
     it('transform a line as speaker label', () => {
       editor.setCursorBufferPosition([1, 0])
 
       atom.commands.dispatch(workspaceElement, command)
 
-      expect(buffer.getText()).toBe('Spec :\nHey :\n')
+      expect(buffer.getText()).toBe('@Spec\n@Hey\n')
     })
 
     it('works when cursor is at the middle of the line', () => {
@@ -41,7 +41,7 @@ describe('Line As Speaker', () => {
 
       atom.commands.dispatch(workspaceElement, command)
 
-      expect(buffer.getText()).toBe('Spec :\nHey :\n')
+      expect(buffer.getText()).toBe('@Spec\n@Hey\n')
     })
 
     it('works when cursor is at the end of the line', () => {
@@ -49,7 +49,7 @@ describe('Line As Speaker', () => {
 
       atom.commands.dispatch(workspaceElement, command)
 
-      expect(buffer.getText()).toBe('Spec :\nHey :\n')
+      expect(buffer.getText()).toBe('@Spec\n@Hey\n')
     })
 
     it('ignore empty lines', () => {
@@ -57,7 +57,7 @@ describe('Line As Speaker', () => {
 
       atom.commands.dispatch(workspaceElement, command)
 
-      expect(buffer.getText()).toBe('Spec :\nHey\n')
+      expect(buffer.getText()).toBe('@Spec\nHey\n')
     })
 
     it('ignore line already having a speaker', () => {
@@ -65,38 +65,27 @@ describe('Line As Speaker', () => {
 
       atom.commands.dispatch(workspaceElement, command)
 
-      expect(buffer.getText()).toBe('Spec :\nHey\n')
+      expect(buffer.getText()).toBe('@Spec\nHey\n')
     })
   })
 
   describe('Trim and space handling', () => {
-    it('ensure single space before semi-colon', () => {
-      editor.insertText('Spec :\nHey   \n')
+    it('remove trailing space of speaker', () => {
+      editor.insertText('@Spec\nHey   \n')
       editor.setCursorBufferPosition([1, 0])
 
       atom.commands.dispatch(workspaceElement, command)
 
-      expect(buffer.getText()).toBe('Spec :\nHey :\n')
+      expect(buffer.getText()).toBe('@Spec\n@Hey\n')
     })
 
     it('normalize spaces for line already being a speaker', () => {
-      editor.insertText('Spec   :\nHey\n')
+      editor.insertText('@Spec   \nHey\n')
       editor.setCursorBufferPosition([0, 0])
 
       atom.commands.dispatch(workspaceElement, command)
 
-      expect(buffer.getText()).toBe('Spec :\nHey\n')
-    })
-  })
-
-  describe('escaped semi-colons', () => {
-    it('convert lines ending by escaped semi-colon', () => {
-      editor.insertText('Spec :\nHey \\:\n') // eslint-disable-line no-useless-escape
-      editor.setCursorBufferPosition([1, 0])
-
-      atom.commands.dispatch(workspaceElement, command)
-
-      expect(buffer.getText()).toBe('Spec :\nHey :\n')
+      expect(buffer.getText()).toBe('@Spec\nHey\n')
     })
   })
 
@@ -107,7 +96,7 @@ describe('Line As Speaker', () => {
 
       atom.commands.dispatch(workspaceElement, command)
 
-      expect(buffer.getText()).toBe('Spec (crying) :\nHey\n')
+      expect(buffer.getText()).toBe('@Spec (crying)\nHey\n')
     })
 
     it('normalize comment in parenthesis', () => {
@@ -116,16 +105,16 @@ describe('Line As Speaker', () => {
 
       atom.commands.dispatch(workspaceElement, command)
 
-      expect(buffer.getText()).toBe('Spec (crying) :\nHey\n')
+      expect(buffer.getText()).toBe('@Spec (crying)\nHey\n')
     })
 
     it('normalize comment in parenthesis for a line already being speaker', () => {
-      editor.insertText('Spec(crying):\nHey\n')
+      editor.insertText('@Spec(crying)\nHey\n')
       editor.setCursorBufferPosition([0, 3])
 
       atom.commands.dispatch(workspaceElement, command)
 
-      expect(buffer.getText()).toBe('Spec (crying) :\nHey\n')
+      expect(buffer.getText()).toBe('@Spec (crying)\nHey\n')
     })
   })
 })
